@@ -36,7 +36,7 @@ public class LevelSpawning : MonoBehaviour {
 
         for (int i = 1; i < 20; i++)
         {
-            levelCell = (int) Random.Range(0, 2);
+            levelCell = (int) Random.Range(0, 3);
 
             Instantiate(Cell[levelCell], new Vector3(i * locationX, locationY, 0), Quaternion.identity);
         }

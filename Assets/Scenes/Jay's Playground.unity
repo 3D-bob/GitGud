@@ -169,7 +169,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 450967311}
   focusAreaSize: {x: 3, y: 4}
-  lookAheadDstX: 9
+  lookAheadDstX: 10
   lookSmoothTimeX: 0.5
   verticalSmoothTime: 0.2
   verticalOffset: 0.2
@@ -347,6 +347,7 @@ MonoBehaviour:
   Cell:
   - {fileID: 4602712323734930, guid: 9fc0ab55f93011e4c943620c44d6e66f, type: 2}
   - {fileID: 4180468996232860, guid: 418d2342c14d4d2478e4af48159e31c2, type: 2}
+  - {fileID: 4072651505058970, guid: 04040e3ea4c11314e91f72f1566687ed, type: 2}
   locationX: 30
 --- !u!4 &1443104368
 Transform:
