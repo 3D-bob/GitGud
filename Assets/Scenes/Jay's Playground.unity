@@ -169,7 +169,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 450967311}
   focusAreaSize: {x: 3, y: 4}
-  lookAheadDstX: 5
+  lookAheadDstX: 9
   lookSmoothTimeX: 0.5
   verticalSmoothTime: 0.2
   verticalOffset: 0.2
@@ -311,11 +311,55 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1237361849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 1, z: 1}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalScale: {x: 6, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1443104366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1443104368}
+  - component: {fileID: 1443104367}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: spawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1443104367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1443104366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147d46f182398f14e9469cea7f04a7a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cell:
+  - {fileID: 4602712323734930, guid: 9fc0ab55f93011e4c943620c44d6e66f, type: 2}
+  - {fileID: 4180468996232860, guid: 418d2342c14d4d2478e4af48159e31c2, type: 2}
+  locationX: 30
+--- !u!4 &1443104368
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1443104366}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2136311860
 Prefab:
@@ -326,11 +370,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4605360475198032, guid: d194a24f6d9d57e409cbf1862831f056, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.6030073
+      value: -3.66
       objectReference: {fileID: 0}
     - target: {fileID: 4605360475198032, guid: d194a24f6d9d57e409cbf1862831f056, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.954835
+      value: 3.91
       objectReference: {fileID: 0}
     - target: {fileID: 4605360475198032, guid: d194a24f6d9d57e409cbf1862831f056, type: 2}
       propertyPath: m_LocalPosition.z

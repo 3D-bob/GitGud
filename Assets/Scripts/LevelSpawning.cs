@@ -5,9 +5,6 @@ using UnityEngine;
 public class LevelSpawning : MonoBehaviour {
 
     [SerializeField]
-    Transform prefab;
-
-    [SerializeField]
     Transform[] Cell;
 
     float locationY = 0;
@@ -24,6 +21,8 @@ public class LevelSpawning : MonoBehaviour {
     void Start ()
     {        
         Instantiate(Cell[1], new Vector3(0, 0, 0), Quaternion.identity);
+
+        generateLevel();
     }
 	
     public void UpdateY(float Y)
