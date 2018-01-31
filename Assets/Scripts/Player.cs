@@ -59,7 +59,14 @@ public class Player : MonoBehaviour {
         //Jos pelaajan ylä- tai alapuolella on este, nopeus y-suunnassa on 0
         if (controller.collisions.above || controller.collisions.below)
         {
-            velocity.y = 0;
+            if(controller.collisions.slidingDownMaxSlope)
+            {
+                velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;
+            }
+            else
+            {
+                velocity.y = 0;
+            }
         }
     }
 
@@ -96,12 +103,35 @@ public class Player : MonoBehaviour {
         //ylöspäin ja hyppyä painaessa korkeampi hyppy
         if (controller.collisions.below && directionalInput.y > 0)
         {
-            velocity.y = maxJumpVelocity * ((1+ directionalInput.y)* highJumpMultiplier);
+           
+            if (controller.collisions.slidingDownMaxSlope)
+            {
+                if (directionalInput.x != -Mathf.Sign(controller.collisions.slopeNormal.x)) // ei voi hypätä, jos alusta on jyrkempi kuin maxSlope
+                {
+                    velocity.y = maxJumpVelocity * controller.collisions.slopeNormal.y * ((1 + directionalInput.y) * highJumpMultiplier);
+                    velocity.x = maxJumpVelocity * controller.collisions.slopeNormal.x;
+                }
+            }
+            else
+            {
+                velocity.y = maxJumpVelocity * ((1 + directionalInput.y) * highJumpMultiplier);
+            }
         }
         //tavallinen hyppy
         else if (controller.collisions.below)
         {
-            velocity.y = maxJumpVelocity;
+            if(controller.collisions.slidingDownMaxSlope)
+            {
+                if(directionalInput.x != -Mathf.Sign(controller.collisions.slopeNormal.x)) // ei voi hypätä, jos alusta on jyrkempi kuin maxSlope
+                {
+                    velocity.y = maxJumpVelocity * controller.collisions.slopeNormal.y;
+                    velocity.x = maxJumpVelocity * controller.collisions.slopeNormal.x;
+                }
+            }
+            else
+            {
+                velocity.y = maxJumpVelocity;
+            }
         }  
         //print(directionalInput);
     }

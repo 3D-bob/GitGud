@@ -9,3 +9,6 @@
 
 24.1.
 3 tuntia pelaajan kontrollerin p‰ivitt‰mist‰, esim sein‰hyppy yms
+
+31.1
+4 tuntia pelaajan kontrollerin ominaisuuksien lis‰‰mist‰ ja git ignoren kanssa taistelua
