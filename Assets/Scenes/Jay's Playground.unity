@@ -211,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 450967311}
   focusAreaSize: {x: 3, y: 4}
-  lookAheadDstX: 10
+  lookAheadDstX: 5
   lookSmoothTimeX: 0.5
   verticalSmoothTime: 0.2
   verticalOffset: 0.2
@@ -395,8 +395,13 @@ MonoBehaviour:
   speedMod: 0.01
   playerCollision:
     serializedVersion: 2
-    m_Bits: 0
-  collider: {fileID: 0}
+    m_Bits: 256
+  horizontalRayCount: 0
+  verticalRayCount: 0
+  horizontalRaySpacing: 0
+  verticalRaySpacing: 0
+  rayLength: 0.1
+  collider: {fileID: 1483006751}
 --- !u!61 &1483006751
 BoxCollider2D:
   m_ObjectHideFlags: 0

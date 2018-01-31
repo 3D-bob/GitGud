@@ -16,6 +16,21 @@ public class WallOfDeath : MonoBehaviour {
     float playerY;
     float wallX;
 
+    const float dstBetweenRays = .25f;
+
+    [HideInInspector]
+    public int horizontalRayCount;
+    [HideInInspector]
+    public int verticalRayCount;
+
+    [HideInInspector]
+    public float horizontalRaySpacing;
+    [HideInInspector]
+    public float verticalRaySpacing;
+
+    [SerializeField]
+    float rayLength = 0.1f;
+
     public BoxCollider2D collider;
     public RaycastPoints raycastPoints;
 
@@ -23,12 +38,13 @@ public class WallOfDeath : MonoBehaviour {
     void Start ()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        
+        CalculateRaySpacing();
     }
 
     // Update is called once per frame
     void Update ()
     {
+        UpdateRaycastOrigins();
         playerY = player.transform.position.y;
         
         this.gameObject.transform.Translate(speed * Time.deltaTime,0,0);
@@ -37,18 +53,42 @@ public class WallOfDeath : MonoBehaviour {
         wallX = this.gameObject.transform.position.x;
         this.gameObject.transform.position = new Vector2(wallX,playerY);
 
-        Bounds bounds = collider.bounds;
-        raycastPoints.topRight = new Vector2(bounds.max.x, bounds.max.y);
-        raycastPoints.bottomRight = new Vector2(bounds.max.x, bounds.min.y);
+        //mestarikoodaaja Tuomas teki tämän raycastin, koska muilla ei taidot riittäny
+        for (int i = 0; i < horizontalRayCount; i++)
+        {
+            Vector2 rayOrigin = raycastPoints.bottomRight;
+            rayOrigin += Vector2.up * (horizontalRaySpacing * i);
 
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right, rayLength, playerCollision);
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up);
-        Debug.DrawRay(raycastPoints.topRight, Vector2.right * 2, Color.blue);
+            if(hit)
+            {
+                player.GetComponent<Player>().DestroyPlayer();
+            }
+            Debug.DrawRay(rayOrigin, Vector2.right * rayLength, Color.blue);
+        }
     }
 
-    private void FixedUpdate()
+    public void UpdateRaycastOrigins()
     {
-        
+        Bounds bounds = collider.bounds;
+
+        raycastPoints.bottomRight = new Vector2(bounds.max.x, bounds.min.y);
+        raycastPoints.topRight = new Vector2(bounds.max.x, bounds.max.y);
+    }
+
+    public void CalculateRaySpacing()
+    {
+        Bounds bounds = collider.bounds;
+
+        float boundsWidth = bounds.size.x;
+        float boundsHeight = bounds.size.y;
+
+        horizontalRayCount = Mathf.RoundToInt(boundsHeight / dstBetweenRays);
+        verticalRayCount = Mathf.RoundToInt(boundsWidth / dstBetweenRays);
+
+        horizontalRaySpacing = bounds.size.y / (horizontalRayCount - 1);
+        verticalRaySpacing = bounds.size.x / (verticalRayCount - 1);
     }
 
     public struct RaycastPoints
@@ -56,7 +96,5 @@ public class WallOfDeath : MonoBehaviour {
         public Vector2 topRight;
         public Vector2 bottomRight;
     }
-
-
 
 }
