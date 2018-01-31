@@ -224,4 +224,10 @@ public class Player : MonoBehaviour {
         //print(velocity.x);
     }
 
+    public void DestroyPlayer()
+    {
+        Destroy(this.gameObject);
+        Debug.Log("Hello world!");
+    }
+
 }
