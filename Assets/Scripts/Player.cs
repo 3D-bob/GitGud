@@ -106,11 +106,23 @@ public class Player : MonoBehaviour {
            
             if (controller.collisions.slidingDownMaxSlope)
             {
-                if (directionalInput.x != -Mathf.Sign(controller.collisions.slopeNormal.x)) // ei voi hypätä, jos alusta on jyrkempi kuin maxSlope
+                velocity.y = maxJumpVelocity * controller.collisions.slopeNormal.y * ((1 + directionalInput.y) * highJumpMultiplier);
+
+                if (directionalInput.x == -Mathf.Sign(controller.collisions.slopeNormal.x))
                 {
-                    velocity.y = maxJumpVelocity * controller.collisions.slopeNormal.y * ((1 + directionalInput.y) * highJumpMultiplier);
-                    velocity.x = maxJumpVelocity * controller.collisions.slopeNormal.x;
+                    velocity.x = maxJumpVelocity * controller.collisions.slopeNormal.x / 6;
                 }
+                else
+                {
+                    velocity.x = maxJumpVelocity * controller.collisions.slopeNormal.x*2;
+                }
+
+                //Jos haluaisi että liian jyrkkää seinää ylös ei voisi hyppiä ylös niin käytettäisiin seuraavaa
+                /* if (directionalInput.x != -Mathf.Sign(controller.collisions.slopeNormal.x))
+                 {
+                     velocity.y = maxJumpVelocity * controller.collisions.slopeNormal.y * ((1 + directionalInput.y) * highJumpMultiplier);
+                     velocity.x = maxJumpVelocity * controller.collisions.slopeNormal.x;
+                 }*/
             }
             else
             {
@@ -122,11 +134,24 @@ public class Player : MonoBehaviour {
         {
             if(controller.collisions.slidingDownMaxSlope)
             {
-                if(directionalInput.x != -Mathf.Sign(controller.collisions.slopeNormal.x)) // ei voi hypätä, jos alusta on jyrkempi kuin maxSlope
+                velocity.y = maxJumpVelocity * controller.collisions.slopeNormal.y;
+
+                if(directionalInput.x == -Mathf.Sign(controller.collisions.slopeNormal.x))
+                {
+                    velocity.x = maxJumpVelocity * controller.collisions.slopeNormal.x/4;
+                }
+                else
+                {
+                    velocity.x = maxJumpVelocity * controller.collisions.slopeNormal.x;
+                }
+                
+
+                //Jos haluaisi että liian jyrkkää seinää ylös ei voisi hyppiä ylös niin käytettäisiin seuraavaa
+                /*if (directionalInput.x != -Mathf.Sign(controller.collisions.slopeNormal.x))
                 {
                     velocity.y = maxJumpVelocity * controller.collisions.slopeNormal.y;
                     velocity.x = maxJumpVelocity * controller.collisions.slopeNormal.x;
-                }
+                }*/
             }
             else
             {
