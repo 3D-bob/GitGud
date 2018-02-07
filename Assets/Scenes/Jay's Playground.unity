@@ -345,9 +345,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cell:
-  - {fileID: 4602712323734930, guid: 9fc0ab55f93011e4c943620c44d6e66f, type: 2}
-  - {fileID: 4180468996232860, guid: 418d2342c14d4d2478e4af48159e31c2, type: 2}
-  - {fileID: 4072651505058970, guid: 04040e3ea4c11314e91f72f1566687ed, type: 2}
+  - {fileID: 4903809231072604, guid: 76b49b67ddd114e4bb58fc11aab78c24, type: 2}
+  - {fileID: 4322073737495676, guid: c9bffbc50d1d1514f8ece4555e5fa832, type: 2}
+  - {fileID: 4729419650992844, guid: 46b9ce4fd87d46d43ba78a57f04fe35c, type: 2}
+  - {fileID: 4568003414245694, guid: d8128cc4a69efc14caa5b3be09ec6fc8, type: 2}
   locationX: 30
 --- !u!4 &1443104368
 Transform:
@@ -518,6 +519,41 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4605360475198032, guid: d194a24f6d9d57e409cbf1862831f056, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114938903844337668, guid: d194a24f6d9d57e409cbf1862831f056,
+        type: 2}
+      propertyPath: collisionMask.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 114774633442099438, guid: d194a24f6d9d57e409cbf1862831f056,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114774633442099438, guid: d194a24f6d9d57e409cbf1862831f056,
+        type: 2}
+      propertyPath: sprintSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114774633442099438, guid: d194a24f6d9d57e409cbf1862831f056,
+        type: 2}
+      propertyPath: wallJumpClimb.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114774633442099438, guid: d194a24f6d9d57e409cbf1862831f056,
+        type: 2}
+      propertyPath: wallJumpClimb.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114774633442099438, guid: d194a24f6d9d57e409cbf1862831f056,
+        type: 2}
+      propertyPath: wallLeap.y
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 23214429200202258, guid: d194a24f6d9d57e409cbf1862831f056,
+        type: 2}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
