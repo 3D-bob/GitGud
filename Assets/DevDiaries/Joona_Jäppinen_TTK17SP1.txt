@@ -9,3 +9,13 @@ Noin kolme tuntia level generoinnin suunnittelua ja koodausta
 
 24.1
 Noin kolme tuntia level generoinnin koodausta
+
+
+30.1
+n. 2h level generoinnin viimeistelyä + n. 1 tunti githubin kanssa kädenvääntöä
+
+31.1
+3h KuolemanSeinä TM koodausta ja hienosäätöä.
+
+6.1
+3h Graafisen ilmeen suunnittelua.
