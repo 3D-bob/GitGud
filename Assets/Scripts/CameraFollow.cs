@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Tekijä Tuomas (tutoriaalin mukaan)
+
 public class CameraFollow : MonoBehaviour {
 
     public Controller2D target;

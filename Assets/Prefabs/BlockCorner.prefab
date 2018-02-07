@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4188098943710320}
   - component: {fileID: 212883993752080864}
-  - component: {fileID: 60474441170436522}
+  - component: {fileID: 60549033013617392}
   m_Layer: 9
   m_Name: BlockCorner
   m_TagString: Untagged
@@ -34,14 +34,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1043313851873798}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: -9.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.5, y: -11.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60474441170436522
+--- !u!60 &60549033013617392
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -65,10 +65,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.484375, y: 0.5}
-      - {x: -0.5, y: -0.484375}
+    - - {x: -0.5, y: -0.5}
+      - {x: -0.5, y: -0.5}
       - {x: -0.5, y: -0.5}
       - {x: 0.5, y: -0.5}
+      - {x: 0.5, y: 0.5}
+      - {x: 0.5, y: 0.5}
       - {x: 0.5, y: 0.5}
 --- !u!212 &212883993752080864
 SpriteRenderer:

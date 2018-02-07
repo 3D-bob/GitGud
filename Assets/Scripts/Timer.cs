@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
+//Made by Tuomas
+
 public class Timer : MonoBehaviour {
 
     public Text timer;
