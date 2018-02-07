@@ -12,7 +12,10 @@ public class Player : MonoBehaviour {
     public float highJumpMultiplier = 0.75f;
     float accelerationTimeAirborne = .2f;
     float accelerationTimeGrounded = .1f;
+
+    [SerializeField]
     float sprintSpeed = 18;
+    [SerializeField]
     float moveSpeed = 6;
 
     public float wallSlideSpeedMax = 3;
