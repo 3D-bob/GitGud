@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4618597181962758}
   - component: {fileID: 212200370176527926}
+  - component: {fileID: 95335721075627942}
   - component: {fileID: 61446564364172016}
   - component: {fileID: 114779545977487008}
   - component: {fileID: 114813540356722424}
@@ -71,6 +72,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &95335721075627942
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1503342072650898}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15cf5de43f3da3b459efabaeb1a11286, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!96 &96020203919547004
 TrailRenderer:
   serializedVersion: 2

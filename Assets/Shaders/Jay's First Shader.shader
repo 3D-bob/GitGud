@@ -51,7 +51,8 @@ Shader "50 Shaders of Jay/Jay's First Shader"
 		// sample the texture
 		fixed4 col = tex2D(_MainTex, i.uv);
 
-	col = 1 - col;
+
+		col = 1 - col;
 		return col;
 	}
 		ENDCG
