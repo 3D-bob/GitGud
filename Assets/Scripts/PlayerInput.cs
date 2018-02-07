@@ -18,22 +18,20 @@ public class PlayerInput : MonoBehaviour {
         Vector2 directionalInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         player.SetDirectionalInput(directionalInput);
 
+        //Animaattorin päivitys
         int dir = 0;
 
         if(directionalInput.x < 0)
         {
             dir = -1;
-           print(dir);
         }
         if (directionalInput.x > 0)
         {
             dir = 1;
-            print(dir);
         }
         if(directionalInput.x == 0)
         {
             dir = 0;
-            print(dir);
         }
 
         anim.SetInteger("Input", dir);
