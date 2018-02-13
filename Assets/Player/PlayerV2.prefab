@@ -88,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1503342072650898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.25, y: 2.5, z: 0}
+  m_LocalPosition: {x: -4.13369, y: 2.5777297, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4804050487167936}
@@ -307,8 +307,8 @@ MonoBehaviour:
   minJumpHeight: 1
   timeToJumpApex: 0.4
   highJumpMultiplier: 0.7
-  sprintSpeed: 18
-  moveSpeed: 6
+  sprintSpeed: 20
+  moveSpeed: 10
   wallSlideSpeedMax: 3
   wallStickTime: 0.25
   wallJumpClimb: {x: 7, y: 25}

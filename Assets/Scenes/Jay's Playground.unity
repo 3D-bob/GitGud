@@ -197,7 +197,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 436888443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 6.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -452,10 +452,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cell:
-  - {fileID: 4903809231072604, guid: 76b49b67ddd114e4bb58fc11aab78c24, type: 2}
+  - {fileID: 4602712323734930, guid: 9fc0ab55f93011e4c943620c44d6e66f, type: 2}
   - {fileID: 4322073737495676, guid: c9bffbc50d1d1514f8ece4555e5fa832, type: 2}
-  - {fileID: 4729419650992844, guid: 46b9ce4fd87d46d43ba78a57f04fe35c, type: 2}
-  - {fileID: 4568003414245694, guid: d8128cc4a69efc14caa5b3be09ec6fc8, type: 2}
+  - {fileID: 4903809231072604, guid: 76b49b67ddd114e4bb58fc11aab78c24, type: 2}
   locationX: 30
 --- !u!4 &1443104368
 Transform:
@@ -482,7 +481,7 @@ GameObject:
   - component: {fileID: 1483006751}
   - component: {fileID: 1483006750}
   m_Layer: 9
-  m_Name: GameObject
+  m_Name: firewall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
