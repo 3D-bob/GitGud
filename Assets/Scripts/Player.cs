@@ -204,8 +204,7 @@ public class Player : MonoBehaviour {
 
                 if (directionalInput.x != wallDirX && directionalInput.x != 0)
                 {
-                    //timeToWallUnStick -= Time.deltaTime;
-                    timeToWallUnStick = 0;
+                    timeToWallUnStick -= Time.deltaTime * 2;
                 }
                 else
                 {
