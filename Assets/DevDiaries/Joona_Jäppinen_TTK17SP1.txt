@@ -10,7 +10,6 @@ Noin kolme tuntia level generoinnin suunnittelua ja koodausta
 24.1
 Noin kolme tuntia level generoinnin koodausta
 
-
 30.1
 n. 2h level generoinnin viimeistelyä + n. 1 tunti githubin kanssa kädenvääntöä
 
@@ -19,3 +18,9 @@ n. 2h level generoinnin viimeistelyä + n. 1 tunti githubin kanssa kädenvääntöä
 
 6.1
 3h Graafisen ilmeen suunnittelua.
+
+7.1
+3h Shader testausta ja graafista viilausta
+
+13.1 
+level palasten sekä partikkeli efektien suunnittelua vähän yli 3h
