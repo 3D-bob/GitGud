@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
     [SerializeField]
     float moveSpeed = 6;
 
-    public float wallSlideSpeedMax = 3;
+    public float wallSlideSpeedMax = 6;
     public float wallStickTime = .25f;
     float timeToWallUnStick;
 
@@ -182,13 +182,14 @@ public class Player : MonoBehaviour {
         moveSpeed = 6;
     }
 
+    //Seinäkiipeily
     void HandleWallSliding()
     {
         wallDirX = (controller.collisions.left) ? -1 : 1;
         wallSliding = false;
 
         //Ehdot seinään tarttumiselle
-        if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 0)
+        if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 2)
         {
             wallSliding = true;
             if (velocity.y < -wallSlideSpeedMax)
@@ -203,7 +204,8 @@ public class Player : MonoBehaviour {
 
                 if (directionalInput.x != wallDirX && directionalInput.x != 0)
                 {
-                    timeToWallUnStick -= Time.deltaTime;
+                    //timeToWallUnStick -= Time.deltaTime;
+                    timeToWallUnStick = 0;
                 }
                 else
                 {
