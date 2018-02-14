@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Passable
   - spawner
+  - Corruptable
   layers:
   - Default
   - TransparentFX
