@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
     [SerializeField]
     float moveSpeed = 6;
 
-    public float wallSlideSpeedMax = 6;
+    public float wallSlideSpeedMax = 12;
     public float wallStickTime = .25f;
     float timeToWallUnStick;
 

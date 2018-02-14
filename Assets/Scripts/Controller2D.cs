@@ -72,6 +72,13 @@ public class Controller2D : RaycastController {
                     continue;
                 }
 
+                //Palikat vaihtelloo värejä, kun ossuupi
+                if (hit.collider.tag == "Corruptable" || hit.collider.tag == "Passable")
+                {
+                    other = hit.collider.gameObject;
+                    Corrupt(ref other);
+                }
+
                 float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
 
                 if(i == 0 && slopeAngle <= maxSlopeAngle)
@@ -139,11 +146,11 @@ public class Controller2D : RaycastController {
                 }
 
                 //Palikat vaihtelloo värejä, kun ossuupi
-                /*if (hit.collider.tag == "Corruptable")
+                if (hit.collider.tag == "Corruptable" || hit.collider.tag == "Passable")
                 {
-                    hit.collider.gameObject = other;
+                    other = hit.collider.gameObject;
                     Corrupt(ref other);
-                }*/
+                }
 
                 moveAmount.y = (hit.distance - skinWidth) * directionY;
                 rayLength = hit.distance;
@@ -183,6 +190,16 @@ public class Controller2D : RaycastController {
     void Corrupt(ref GameObject other)
     {
         SpriteRenderer SR;
+        ParticleSystem PS;
+
+        if(other.GetComponent<ParticleSystem>())
+        {
+            PS = other.GetComponent<ParticleSystem>();
+            ParticleSystem.MainModule main = PS.main;
+            main.startColor = Color.blue;
+        }
+       
+
         SR = other.GetComponent<SpriteRenderer>();
         SR.color = Color.blue;
     }
