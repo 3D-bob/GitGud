@@ -14,6 +14,7 @@ public class WallOfDeath : MonoBehaviour {
     
     GameObject player;
     float playerY;
+    float playerX;
     float wallX;
 
     const float dstBetweenRays = .25f;
@@ -46,12 +47,24 @@ public class WallOfDeath : MonoBehaviour {
     {
         UpdateRaycastOrigins();
         playerY = player.transform.position.y;
+        playerX = player.transform.position.x;
         
-        this.gameObject.transform.Translate(speed * Time.deltaTime,0,0);
-        speed += speedMod;
+        //this.gameObject.transform.Translate(speed * Time.deltaTime,0,0);
+        this.gameObject.transform.position = Vector2.MoveTowards(this.gameObject.transform.position, transform.position = new Vector2(playerX, playerY), speed * Time.deltaTime);
+        //speed += speedMod;
 
+        if (!(speed >= 15))
+        {
+            speed += speedMod;
+        }
+
+        Debug.Log(speed);
+
+
+        //tracks the players location on x axis
         wallX = this.gameObject.transform.position.x;
-        this.gameObject.transform.position = new Vector2(wallX,playerY);
+        //this.gameObject.transform.position = new Vector2(wallX,playerY);
+        //this.gameObject.transform.position = Vector2.MoveTowards(this.gameObject.transform.position, transform.position = new Vector2(wallX, playerY), 0.02f);
 
         //mestarikoodaaja Tuomas teki tämän raycastin, koska muilla ei taidot riittäny
         for (int i = 0; i < horizontalRayCount; i++)
