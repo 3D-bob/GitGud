@@ -139,11 +139,11 @@ public class Controller2D : RaycastController {
                 }
 
                 //Palikat vaihtelloo värejä, kun ossuupi
-                if (hit.collider.tag == "Corruptable")
+                /*if (hit.collider.tag == "Corruptable")
                 {
                     hit.collider.gameObject = other;
-                    Corrupt(other);
-                }
+                    Corrupt(ref other);
+                }*/
 
                 moveAmount.y = (hit.distance - skinWidth) * directionY;
                 rayLength = hit.distance;
