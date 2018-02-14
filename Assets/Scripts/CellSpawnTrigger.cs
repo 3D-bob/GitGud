@@ -2,65 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallOfDeath : MonoBehaviour {
+public class CellSpawnTrigger : MonoBehaviour {
 
-    [SerializeField]
-    float speed = 100f;
-    [SerializeField]
-    float speedMod = 0.01f;
+    public struct RaycastPoints
+    {
+        public Vector2 topRight;
+        public Vector2 bottomRight;
+    }
 
     [SerializeField]
     LayerMask playerCollision;
-    
-    GameObject player;
-    float playerY;
-    float playerX;
 
-    [SerializeField]
-    float maxSpeed = 15;
+    GameObject player;
 
     const float dstBetweenRays = .25f;
 
-    [HideInInspector]
-    public int horizontalRayCount;
-    [HideInInspector]
-    public int verticalRayCount;
+    [SerializeField]
+    int horizontalRayCount;
+    [SerializeField]
+    int verticalRayCount;
 
-    [HideInInspector]
-    public float horizontalRaySpacing;
-    [HideInInspector]
-    public float verticalRaySpacing;
+    [SerializeField]
+    float horizontalRaySpacing;
+    [SerializeField]
+    float verticalRaySpacing;
 
     [SerializeField]
     float rayLength = 0.1f;
 
-    public BoxCollider2D collider;
-    public RaycastPoints raycastPoints;
+    [SerializeField]
+    BoxCollider2D collider;
+
+    [SerializeField]
+    RaycastPoints raycastPoints;
 
     // Use this for initialization
     void Start ()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         CalculateRaySpacing();
-    }
-
-    // Update is called once per frame
-    void Update ()
+	}
+	
+	// Update is called once per frame
+	void Update ()
     {
         UpdateRaycastOrigins();
-        playerY = player.transform.position.y;
-        playerX = player.transform.position.x;
-        
-        //Tracks the players location
-        this.gameObject.transform.position = Vector2.MoveTowards(this.gameObject.transform.position, transform.position = new Vector2(playerX, playerY), speed * Time.deltaTime);
 
-        if (!(speed >= maxSpeed))
-        {
-            speed += speedMod;
-        }
-        //Debug.Log(speed);
-
-        //mestarikoodaaja Tuomas teki tämän raycastin
         for (int i = 0; i < horizontalRayCount; i++)
         {
             Vector2 rayOrigin = raycastPoints.bottomRight;
@@ -68,11 +55,11 @@ public class WallOfDeath : MonoBehaviour {
 
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right, rayLength, playerCollision);
 
-            if(hit)
+            if (hit)
             {
                 player.GetComponent<Player>().DestroyPlayer();
             }
-            Debug.DrawRay(rayOrigin, Vector2.right * rayLength, Color.blue);
+            Debug.DrawRay(rayOrigin, Vector2.right * rayLength, Color.yellow);
         }
     }
 
@@ -97,11 +84,4 @@ public class WallOfDeath : MonoBehaviour {
         horizontalRaySpacing = bounds.size.y / (horizontalRayCount - 1);
         verticalRaySpacing = bounds.size.x / (verticalRayCount - 1);
     }
-
-    public struct RaycastPoints
-    {
-        public Vector2 topRight;
-        public Vector2 bottomRight;
-    }
-
 }
