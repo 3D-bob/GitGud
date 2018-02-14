@@ -76,11 +76,13 @@ public class Player : MonoBehaviour {
         }
     }
 
+    //partikkelien emitointi pelaajan liikkumisnopeuden mukaan
     void Emission()
     {
-        //var e = ps.emission;
-        ps.Emit(Mathf.RoundToInt(((Mathf.Abs(velocity.magnitude)) * Time.deltaTime * 10))/2);
-        print((Mathf.RoundToInt(((Mathf.Abs(velocity.magnitude)) * Time.deltaTime * 10)) / 2));
+        ParticleSystem.EmissionModule e = ps.emission;   
+
+        e.rateOverTime = (Mathf.RoundToInt(((Mathf.Abs(velocity.magnitude)) * Time.deltaTime * 100)));
+        print(Mathf.RoundToInt(((Mathf.Abs(velocity.magnitude)) * Time.deltaTime * 100)));
     }
 
     public void SetDirectionalInput (Vector2 input)

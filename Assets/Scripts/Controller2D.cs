@@ -187,11 +187,13 @@ public class Controller2D : RaycastController {
         }
     }
 
+    //palikat vaihtelloo värejä
     void Corrupt(ref GameObject other)
     {
         SpriteRenderer SR;
         ParticleSystem PS;
 
+        //Jos on partikkelisysteemi, niin kääpi tälleensä
         if(other.GetComponent<ParticleSystem>())
         {
             PS = other.GetComponent<ParticleSystem>();
@@ -199,7 +201,7 @@ public class Controller2D : RaycastController {
             main.startColor = Color.blue;
         }
        
-
+        //Spriten värin vaihtaminen
         SR = other.GetComponent<SpriteRenderer>();
         SR.color = Color.blue;
     }
