@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
     [SerializeField]
     float moveSpeed = 6;
 
-    public float wallSlideSpeedMax = 12;
+    public float wallSlideSpeedMax = 6;
     public float wallStickTime = .25f;
     float timeToWallUnStick;
 
@@ -36,6 +36,7 @@ public class Player : MonoBehaviour {
 
     Controller2D controller;
     Vector2 directionalInput;
+    ParticleSystem ps;
     bool wallSliding;
     //bool sprinting;
     int wallDirX;
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour {
     void Start()
     {
         controller = GetComponent<Controller2D>();
+        ps = GetComponent<ParticleSystem>();
 
         //Hyppäämisen käytetty kaava 
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
@@ -55,6 +57,7 @@ public class Player : MonoBehaviour {
     {
         CalculateVelocity();
         HandleWallSliding();
+        Emission();
 
         //varsinainen liikkumismetodi (löytyy controller2D-skriptistä)
         controller.Move(velocity * Time.deltaTime, directionalInput);
@@ -71,6 +74,13 @@ public class Player : MonoBehaviour {
                 velocity.y = 0;
             }
         }
+    }
+
+    void Emission()
+    {
+        //var e = ps.emission;
+        ps.Emit(Mathf.RoundToInt(((Mathf.Abs(velocity.magnitude)) * Time.deltaTime * 10))/2);
+        print((Mathf.RoundToInt(((Mathf.Abs(velocity.magnitude)) * Time.deltaTime * 10)) / 2));
     }
 
     public void SetDirectionalInput (Vector2 input)
