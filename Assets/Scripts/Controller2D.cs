@@ -6,6 +6,8 @@ public class Controller2D : RaycastController {
 
     public float maxSlopeAngle = 80;
 
+    GameObject other;
+
     public CollisionInfo collisions;
     [HideInInspector]
     public Vector2 playerInput;
@@ -107,15 +109,15 @@ public class Controller2D : RaycastController {
         }
     }
 
-    void VerticalCollisions(ref Vector2 velocity)
+    void VerticalCollisions(ref Vector2 moveAmount)
     {
-        float directionY = Mathf.Sign(velocity.y);
-        float rayLength = Mathf.Abs(velocity.y) + skinWidth;
+        float directionY = Mathf.Sign(moveAmount.y);
+        float rayLength = Mathf.Abs(moveAmount.y) + skinWidth;
 
         for (int i = 0; i < verticalRayCount; i++)
         {
             Vector2 rayOrigin = (directionY == -1) ? raycastOrigins.bottomLeft : raycastOrigins.topLeft;
-            rayOrigin += Vector2.right * (verticalRaySpacing * i + velocity.x);
+            rayOrigin += Vector2.right * (verticalRaySpacing * i + moveAmount.x);
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * directionY, rayLength, collisionMask);
 
             Debug.DrawRay(rayOrigin, Vector2.up * directionY, Color.red);
@@ -136,12 +138,19 @@ public class Controller2D : RaycastController {
                     }
                 }
 
-                velocity.y = (hit.distance - skinWidth) * directionY;
+                //Palikat vaihtelloo värejä, kun ossuupi
+                if (hit.collider.tag == "Corruptable")
+                {
+                    hit.collider.gameObject = other;
+                    Corrupt(other);
+                }
+
+                moveAmount.y = (hit.distance - skinWidth) * directionY;
                 rayLength = hit.distance;
 
                 if(collisions.climbingSlope)
                 {
-                    velocity.x = velocity.y / Mathf.Tan(collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Sign(velocity.x);
+                    moveAmount.x = moveAmount.y / Mathf.Tan(collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Sign(moveAmount.x);
                        
                 }
 
@@ -153,9 +162,9 @@ public class Controller2D : RaycastController {
 
         if (collisions.climbingSlope)
         {
-            float directionX = Mathf.Sign(velocity.x);
-            rayLength = Mathf.Abs(velocity.x) + skinWidth;
-            Vector2 rayOrigin = ((directionX == -1) ? raycastOrigins.bottomLeft : raycastOrigins.bottomRight) + Vector2.up * velocity.y;
+            float directionX = Mathf.Sign(moveAmount.x);
+            rayLength = Mathf.Abs(moveAmount.x) + skinWidth;
+            Vector2 rayOrigin = ((directionX == -1) ? raycastOrigins.bottomLeft : raycastOrigins.bottomRight) + Vector2.up * moveAmount.y;
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, collisionMask);
 
             if (hit)
@@ -163,12 +172,19 @@ public class Controller2D : RaycastController {
                 float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
                 if(slopeAngle != collisions.slopeAngle)
                 {
-                    velocity.x = (hit.distance - skinWidth) * directionX;
+                    moveAmount.x = (hit.distance - skinWidth) * directionX;
                     collisions.slopeAngle = slopeAngle;
                     collisions.slopeNormal = hit.normal;
                 }
             }
         }
+    }
+
+    void Corrupt(ref GameObject other)
+    {
+        SpriteRenderer SR;
+        SR = other.GetComponent<SpriteRenderer>();
+        SR.color = Color.blue;
     }
 
     //Ylämäkeen kiipeäminen
