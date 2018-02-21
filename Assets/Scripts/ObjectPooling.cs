@@ -5,26 +5,29 @@ using UnityEngine;
 public class ObjectPooling : MonoBehaviour {
 
     public List<GameObject> pooledObjects;
-    public GameObject objectToPool;
-    public GameObject[] levelCell; 
-    public int poolSize;
+    //public GameObject objectToPool;
+    public GameObject[] objectToPool;
+
+    //public int poolSize;
+    //public GameObject[] levelCell; 
+    
 
 	// Use this for initialization
 	void Start ()
     {
-        for (int i = 0; i < poolSize; i++)
+       for (int i = 0; i < objectToPool.Length; i++)
         {
-            GameObject obj = (GameObject)Instantiate(objectToPool);
+            GameObject obj = (GameObject)Instantiate(objectToPool[i]);
             obj.SetActive(false);
             pooledObjects.Add(obj);
         }
 
-        for (int i = 0; i < poolSize; i++)
+        /*for (int i = 0; i < levelCell.Length; i++)
         {
-            GameObject obj = (GameObject)Instantiate(objectToPool);
+            GameObject obj = levelCell[i];
             obj.SetActive(false);
             pooledObjects.Add(obj);
-        }
+        }*/
     }
 	
 	// Update is called once per frame
@@ -53,6 +56,6 @@ public class ObjectPooling : MonoBehaviour {
                 return pooledObjects[i];
             }
         }
-        return null;
+        return null;  
     }
 }
