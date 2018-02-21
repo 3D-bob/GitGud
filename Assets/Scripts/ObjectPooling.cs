@@ -6,6 +6,7 @@ public class ObjectPooling : MonoBehaviour {
 
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
+    public GameObject[] levelCell; 
     public int poolSize;
 
 	// Use this for initialization
@@ -17,7 +18,14 @@ public class ObjectPooling : MonoBehaviour {
             obj.SetActive(false);
             pooledObjects.Add(obj);
         }
-	}
+
+        for (int i = 0; i < poolSize; i++)
+        {
+            GameObject obj = (GameObject)Instantiate(objectToPool);
+            obj.SetActive(false);
+            pooledObjects.Add(obj);
+        }
+    }
 	
 	// Update is called once per frame
 	void Update ()
