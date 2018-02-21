@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ObjectPooling : MonoBehaviour {
 
-    public List<GameObject> pooledObjects;
-    //public GameObject objectToPool;
+    public List<GameObject>[] pooledObjects;
+    //public List<GameObject> pooledObjects;
     public GameObject[] objectToPool;
+
 
     //public int poolSize;
     //public GameObject[] levelCell; 
@@ -15,20 +16,29 @@ public class ObjectPooling : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-       for (int i = 0; i < objectToPool.Length; i++)
-        {
-            GameObject obj = (GameObject)Instantiate(objectToPool[i]);
-            obj.SetActive(false);
-            pooledObjects.Add(obj);
-        }
+        /*for (int i = 0; i < objectToPool.Length; i++)
+         {
+             GameObject obj = (GameObject)Instantiate(objectToPool[i]);
+             obj.SetActive(false);
+             pooledObjects.Add(obj);
+         }*/
 
-        /*for (int i = 0; i < levelCell.Length; i++)
+        pooledObjects = new List<GameObject>[objectToPool.Length];
+        for (int i = 0; i < objectToPool.Length; i++)
         {
-            GameObject obj = levelCell[i];
+            GameObject obj = objectToPool[i];
             obj.SetActive(false);
-            pooledObjects.Add(obj);
-        }*/
-    }
+            
+        }
+    
+
+    /*for (int i = 0; i < levelCell.Length; i++)
+    {
+        GameObject obj = levelCell[i];
+        obj.SetActive(false);
+        pooledObjects.Add(obj);
+    }*/
+}
 	
 	// Update is called once per frame
 	void Update ()
@@ -49,13 +59,29 @@ public class ObjectPooling : MonoBehaviour {
 
     public GameObject ReturnFromPool()
     {
-        for (int i = 0; i < pooledObjects.Count; i++)
+        //RANDOMIZING
+        int r = Random.Range(0, pooledObjects.Length);
+
+        for (int i = 0; i < pooledObjects[r].Count; i++)
         {
             if(!pooledObjects[i].activeInHierarchy)
             {
                 return pooledObjects[i];
             }
+
         }
-        return null;  
+
+
+
+       /*for (int i = 0; i < pooledObjects.Count; i++)
+        {
+            if(!pooledObjects[i].activeInHierarchy)
+            {
+                return pooledObjects[i];
+            }
+        }*/
+
+
+        return null; 
     }
 }
