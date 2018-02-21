@@ -243,7 +243,6 @@ public class Player : MonoBehaviour {
     public void DestroyPlayer()
     {
         this.gameObject.SetActive(false);
-        Debug.Log("Hello world!");
     }
 
 }

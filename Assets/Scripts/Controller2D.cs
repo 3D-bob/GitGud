@@ -81,6 +81,12 @@ public class Controller2D : RaycastController {
                     Corrupt(ref other);
                 }
 
+                //Kuolo korjaa, jos tämmössiin törmää
+                if (hit.collider.tag == "DeathAwaits")
+                {
+                    this.gameObject.SetActive(false);
+                }
+
                 float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
 
                 if(i == 0 && slopeAngle <= maxSlopeAngle)
@@ -153,6 +159,13 @@ public class Controller2D : RaycastController {
                     other = hit.collider.gameObject;
                     Corrupt(ref other);
                 }
+
+                //Kuolo korjaa, jos tämmössiin törmää
+                if (hit.collider.tag == "DeathAwaits")
+                {
+                    this.gameObject.SetActive(false);
+                }
+
 
                 moveAmount.y = (hit.distance - skinWidth) * directionY;
                 rayLength = hit.distance;
