@@ -12,6 +12,8 @@ public class Controller2D : RaycastController {
     [HideInInspector]
     public Vector2 playerInput;
 
+    public ScoreCounter sc;
+
     public override void Start()
     {
         base.Start();
@@ -202,8 +204,14 @@ public class Controller2D : RaycastController {
         }
        
         //Spriten värin vaihtaminen
-        SR = other.GetComponent<SpriteRenderer>();
-        SR.color = Color.blue;
+
+        if(other.GetComponent<SpriteRenderer>().color != Color.blue)
+        {
+            sc.UpdateScore();
+            SR = other.GetComponent<SpriteRenderer>();
+            SR.color = Color.blue;
+        }
+        
     }
 
     //Ylämäkeen kiipeäminen

@@ -59,7 +59,7 @@ public class Player : MonoBehaviour {
         HandleWallSliding();
         Emission();
 
-        //varsinainen liikkumismetodi (löytyy controller2D-skriptistä)
+        //varsinainen liikkumismetodi löytyy controller2D-skriptistä
         controller.Move(velocity * Time.deltaTime, directionalInput);
 
         //Jos pelaajan ylä- tai alapuolella on este, nopeus y-suunnassa on 0
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour {
         ParticleSystem.EmissionModule e = ps.emission;   
 
         e.rateOverTime = (Mathf.RoundToInt(((Mathf.Abs(velocity.magnitude)) * Time.deltaTime * 100)));
-        print(Mathf.RoundToInt(((Mathf.Abs(velocity.magnitude)) * Time.deltaTime * 100)));
+        //print(Mathf.RoundToInt(((Mathf.Abs(velocity.magnitude)) * Time.deltaTime * 100)));
     }
 
     public void SetDirectionalInput (Vector2 input)
@@ -242,7 +242,7 @@ public class Player : MonoBehaviour {
 
     public void DestroyPlayer()
     {
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
         Debug.Log("Hello world!");
     }
 

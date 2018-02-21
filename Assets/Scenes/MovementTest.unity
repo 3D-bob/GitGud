@@ -21349,6 +21349,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114779545977487008, guid: d5badc002fbf22f4fa7c28afcb745621,
+        type: 2}
+      propertyPath: sc
+      value: 
+      objectReference: {fileID: 1649690317}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5badc002fbf22f4fa7c28afcb745621, type: 2}
   m_IsPrefabParent: 0
@@ -21932,26 +21937,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1649690316}
-  - component: {fileID: 1649690315}
+  - component: {fileID: 1649690317}
   m_Layer: 0
-  m_Name: Timer
+  m_Name: ScoreCounterObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1649690315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1649690314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66c8aee1b60f38843bce2979f5fb670d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: {fileID: 2056015502}
 --- !u!4 &1649690316
 Transform:
   m_ObjectHideFlags: 0
@@ -21965,6 +21958,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1649690317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1649690314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e52bc724985b9b4f8a435442ecdd992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 2056015502}
 --- !u!1001 &1650196361
 Prefab:
   m_ObjectHideFlags: 0
@@ -26138,6 +26143,7 @@ MonoBehaviour:
   collider: {fileID: 0}
   maxSlopeAngle: 80
   playerInput: {x: 0, y: 0}
+  sc: {fileID: 0}
 --- !u!61 &2014733220
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26438,7 +26444,7 @@ GameObject:
   - component: {fileID: 2056015503}
   - component: {fileID: 2056015502}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26494,7 +26500,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Time
+  m_Text: 'Corrupted
 
 '
 --- !u!222 &2056015503
