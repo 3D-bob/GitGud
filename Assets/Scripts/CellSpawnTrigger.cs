@@ -4,84 +4,40 @@ using UnityEngine;
 
 public class CellSpawnTrigger : MonoBehaviour {
 
-    public struct RaycastPoints
-    {
-        public Vector2 topRight;
-        public Vector2 bottomRight;
-    }
-
     [SerializeField]
     LayerMask playerCollision;
 
+    GameObject Spawner;
     GameObject player;
-
-    const float dstBetweenRays = .25f;
-
-    [SerializeField]
-    int horizontalRayCount;
-    [SerializeField]
-    int verticalRayCount;
+    GameObject WallODeath;
 
     [SerializeField]
-    float horizontalRaySpacing;
-    [SerializeField]
-    float verticalRaySpacing;
-
-    [SerializeField]
-    float rayLength = 0.1f;
+    float rayLength = 20f;
 
     [SerializeField]
     BoxCollider2D collider;
 
-    [SerializeField]
-    RaycastPoints raycastPoints;
+    bool hasBeenTriggered = false;
 
-    // Use this for initialization
     void Start ()
     {
+        WallODeath = GameObject.FindGameObjectWithTag("WallODeath");
+        Spawner = GameObject.FindGameObjectWithTag("spawner");
         player = GameObject.FindGameObjectWithTag("Player");
-        CalculateRaySpacing();
-	}
+    }
 	
-	// Update is called once per frame
 	void Update ()
     {
-        UpdateRaycastOrigins();
+        Debug.DrawRay(new Vector2(collider.bounds.min.x, collider.bounds.min.y), transform.TransformDirection(Vector2.up * rayLength), Color.yellow);
+        RaycastHit2D trigger = Physics2D.Raycast(new Vector2(collider.bounds.min.x, collider.bounds.min.y), transform.TransformDirection(Vector2.up), rayLength, playerCollision);
 
-        for (int i = 0; i < horizontalRayCount; i++)
+        if (trigger && !hasBeenTriggered)
         {
-            Vector2 rayOrigin = raycastPoints.bottomRight;
-            rayOrigin += Vector2.up * (horizontalRaySpacing * i);
-
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right, rayLength, playerCollision);
-
-            if (hit)
-            {
-                player.GetComponent<Player>().DestroyPlayer();
-            }
-            Debug.DrawRay(rayOrigin, Vector2.right * rayLength, Color.yellow);
+            Spawner.GetComponent<LvlSpwng2>().generateLevel();
+            //Debug.Log("Triggered");
+            hasBeenTriggered = true;
         }
-    }
-
-    public void UpdateRaycastOrigins()
-    {
-        Bounds bounds = collider.bounds;
-
-        raycastPoints.bottomRight = new Vector2(bounds.max.x, bounds.min.y);
-        raycastPoints.topRight = new Vector2(bounds.max.x, bounds.max.y);
-    }
-
-    public void CalculateRaySpacing()
-    {
-        Bounds bounds = collider.bounds;
-
-        float boundsWidth = bounds.size.x;
-        float boundsHeight = bounds.size.y;
-
-        horizontalRayCount = Mathf.RoundToInt(boundsHeight / dstBetweenRays);
-        verticalRayCount = Mathf.RoundToInt(boundsWidth / dstBetweenRays);
-
-        horizontalRaySpacing = bounds.size.y / (horizontalRayCount - 1);
-        verticalRaySpacing = bounds.size.x / (verticalRayCount - 1);
+        //else if(wallofdeath)
+       
     }
 }

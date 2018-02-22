@@ -26,6 +26,7 @@ public class LevelCell : MonoBehaviour {
         newY = location.transform.position.y;
 
         spawner = GameObject.FindGameObjectWithTag("spawner");
-        spawner.GetComponent<LevelSpawning>().UpdateY(newY);
+        spawner.GetComponent<LvlSpwng2>().UpdateY(newY);
+        ////////////////////^muista vaihtaa^//////////////////
     }
 }

@@ -44,10 +44,10 @@ public class LvlSpwng2 : MonoBehaviour {
         locationY = Y;
     }
 
-    void generateLevel()
+    public void generateLevel()
     {
         //Testing generation
-        for (int i = 0; i < pooledCells.Count; i++)
+        /*for (int i = 0; i < pooledCells.Count; i++)
         {
             GameObject nextCell = GetNextCell();
 
@@ -58,6 +58,16 @@ public class LvlSpwng2 : MonoBehaviour {
                 nextCell.SetActive(true);
                 locationX += 30;
             }
+        }*/
+
+        GameObject nextCell = GetNextCell();
+
+        if (nextCell != null)
+        {
+            nextCell.transform.position = new Vector3(locationX, locationY, 0);
+            nextCell.transform.rotation = Quaternion.identity;
+            nextCell.SetActive(true);
+            locationX += 30;
         }
     }
 
