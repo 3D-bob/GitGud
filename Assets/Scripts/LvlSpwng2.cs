@@ -4,42 +4,37 @@ using UnityEngine;
 
 public class LvlSpwng2 : MonoBehaviour {
 
+    public List<GameObject> pooledCells;
+
     //[SerializeField]
-    //private List<GameObject> pooledCells;
-
-    public GameObject[] cell1;
-    public GameObject[] cell2;
-    public GameObject[] cell3;
-
-    public int arrayLength;
-
-    public List<GameObject[]> list;
-
-    [SerializeField]
-    GameObject[] levelCell;
+    public GameObject[] CellsToPool;
 
     float locationY = 0;
 
     [SerializeField]
-    float locationX = 30.0f;
+    float locationX = 0.0f;
 
-    int nextCell;
-    int loc = 1;
+    Random random = new Random();
+    int levelCell;
 
+    public int AmountOfDupes = 3;
+    int updateX = 30;
+
+    // Use this for initialization
     void Start()
     {
-
-
-        //Instantiate(Cell[1], new Vector3(0, 0, 0), Quaternion.identity);
-
-        /*for (int i = 0; i < arrayLength; i++)
+        for (int i = 0; i < CellsToPool.Length; i++)
         {
-            GameObject obj = levelCell[i];
-            obj.SetActive(false);
-            pooledCells.Add(obj);
-        }*/
+            for (int c = 0; c < AmountOfDupes; c++)
+            {
+                GameObject cell = (GameObject)Instantiate(CellsToPool[i]);
+                cell.SetActive(false);
+                pooledCells.Add(cell);
+            }
+        }
 
-        //generateLevel();
+        generateLevel();
+        //updateX = 30;
     }
 
     public void UpdateY(float Y)
@@ -47,34 +42,50 @@ public class LvlSpwng2 : MonoBehaviour {
         locationY = Y;
     }
 
-    /*void generateLevel()
+    void generateLevel()
     {
-        nextCell = (int)Random.Range(0, levelCell.Length);
+        GameObject nextCell = GetNextCell();
 
-        pooledCells[nextCell].transform.position = new Vector3(loc * locationX, locationY, 0);
-        pooledCells[nextCell].transform.rotation = Quaternion.identity;
-
-        pooledCells[nextCell].SetActive(true);
-
-        loc++;
-        /*for (int i = 1; i < 20; i++)
+        if (nextCell != null)
         {
-            levelCell = (int)Random.Range(0, Cell.Length);
+            nextCell.transform.position = new Vector3(locationX, locationY, 0);
+            nextCell.transform.rotation = Quaternion.identity;
+            nextCell.SetActive(true);
+        }
 
-            Instantiate(Cell[levelCell], new Vector3(i * locationX, locationY, 0), Quaternion.identity);
+        //Testing generation
+        for (int i = 0; i < pooledCells.Count; i++)
+        {
+            //GameObject nextCell = GetNextCell();
+
+            if (nextCell != null)
+            {
+                nextCell.transform.position = new Vector3(updateX + locationX, locationY, 0);
+                nextCell.transform.rotation = Quaternion.identity;
+                nextCell.SetActive(true);
+            }
         }
     }
 
-    public GameObject ReturnFromPool()
+    public GameObject GetNextCell()
     {
+        updateX++;
+
         for (int i = 0; i < pooledCells.Count; i++)
         {
-            if (!pooledCells[i].activeInHierarchy)
+            if(!pooledCells[i].activeInHierarchy)
             {
-                return pooledCells[i];
+                int r = Random.Range(0, pooledCells.Count);
+
+                while(pooledCells[r].activeInHierarchy)
+                {
+                    r = Random.Range(0, pooledCells.Count);
+                }
+                return pooledCells[r];
             }
         }
+
         return null;
-    }*/
+    }
 }
 

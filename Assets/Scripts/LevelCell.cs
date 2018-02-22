@@ -9,7 +9,17 @@ public class LevelCell : MonoBehaviour {
 
     Transform location;
 
-    private void Awake()
+    /*private void Awake()
+    {
+        location = this.gameObject.transform.GetChild(0);
+
+        newY = location.transform.position.y;
+
+        spawner = GameObject.FindGameObjectWithTag("spawner");
+        spawner.GetComponent<LevelSpawning>().UpdateY(newY);
+    }*/
+
+    void OnEnable()
     {
         location = this.gameObject.transform.GetChild(0);
 
