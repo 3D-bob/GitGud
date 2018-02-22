@@ -11,18 +11,20 @@ public class LvlSpwng2 : MonoBehaviour {
 
     float locationY = 0;
 
-    [SerializeField]
-    float locationX = 0.0f;
+    //[SerializeField]
+    float locationX = 0f;
 
     Random random = new Random();
     int levelCell;
 
     public int AmountOfDupes = 3;
-    int updateX = 30;
+    int updateX = 0;
+
+   
 
     // Use this for initialization
     void Start()
-    {
+    {       
         for (int i = 0; i < CellsToPool.Length; i++)
         {
             for (int c = 0; c < AmountOfDupes; c++)
@@ -34,7 +36,6 @@ public class LvlSpwng2 : MonoBehaviour {
         }
 
         generateLevel();
-        //updateX = 30;
     }
 
     public void UpdateY(float Y)
@@ -44,23 +45,14 @@ public class LvlSpwng2 : MonoBehaviour {
 
     void generateLevel()
     {
-        GameObject nextCell = GetNextCell();
-
-        if (nextCell != null)
-        {
-            nextCell.transform.position = new Vector3(locationX, locationY, 0);
-            nextCell.transform.rotation = Quaternion.identity;
-            nextCell.SetActive(true);
-        }
-
         //Testing generation
-        for (int i = 0; i < pooledCells.Count; i++)
+        for (int i = 0; i < 1; i++)
         {
-            //GameObject nextCell = GetNextCell();
+            GameObject nextCell = GetNextCell();
 
             if (nextCell != null)
             {
-                nextCell.transform.position = new Vector3(updateX + locationX, locationY, 0);
+                nextCell.transform.position = new Vector3(locationX, locationY, 0);
                 nextCell.transform.rotation = Quaternion.identity;
                 nextCell.SetActive(true);
             }

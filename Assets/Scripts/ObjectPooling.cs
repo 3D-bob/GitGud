@@ -6,8 +6,7 @@ public class ObjectPooling : MonoBehaviour {
 
     public List<GameObject> pooledObjects;
     public GameObject[] objectToPool;
-
-   
+  
 	// Use this for initialization
 	void Start ()
     {
@@ -37,19 +36,7 @@ public class ObjectPooling : MonoBehaviour {
     }
 
     public GameObject ReturnFromPool()
-    {
-        //RANDOMIZING
-        //int r = Random.Range(0, pooledObjects.Length);
-
-       /*for (int i = 0; i < pooledObjects.Count; i++)
-        {
-            if(!pooledObjects[i].activeInHierarchy)
-            {
-                return pooledObjects[i];
-            }
-
-        }*/
-
+    {        
        for (int i = 0; i < pooledObjects.Count; i++)
         {
             if(!pooledObjects[i].activeInHierarchy)
