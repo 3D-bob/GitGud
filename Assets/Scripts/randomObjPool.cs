@@ -5,7 +5,7 @@ using UnityEngine;
 public class randomObjPool : MonoBehaviour {
 
     public GameObject[] platformPrefabs;
-    //public bool willGrow = true;
+    public bool willGrow = true;
 
     public List<GameObject>[] pooledObjects;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectPooling : MonoBehaviour {
 
-    public List<GameObject>[] pooledObjects;
+    public List<GameObject> pooledObjects;
     //public List<GameObject> pooledObjects;
     public GameObject[] objectToPool;
 
@@ -16,20 +16,20 @@ public class ObjectPooling : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        /*for (int i = 0; i < objectToPool.Length; i++)
+        for (int i = 0; i < objectToPool.Length; i++)
          {
              GameObject obj = (GameObject)Instantiate(objectToPool[i]);
              obj.SetActive(false);
              pooledObjects.Add(obj);
-         }*/
+         }
 
-        pooledObjects = new List<GameObject>[objectToPool.Length];
+        /*pooledObjects = new List<GameObject>[objectToPool.Length];
         for (int i = 0; i < objectToPool.Length; i++)
         {
             GameObject obj = objectToPool[i];
             obj.SetActive(false);
             
-        }
+        }*/
     
 
     /*for (int i = 0; i < levelCell.Length; i++)
@@ -60,26 +60,26 @@ public class ObjectPooling : MonoBehaviour {
     public GameObject ReturnFromPool()
     {
         //RANDOMIZING
-        int r = Random.Range(0, pooledObjects.Length);
+        //int r = Random.Range(0, pooledObjects.Length);
 
-        for (int i = 0; i < pooledObjects[r].Count; i++)
+       /* for (int i = 0; i < pooledObjects[r].Count; i++)
         {
             if(!pooledObjects[i].activeInHierarchy)
             {
                 return pooledObjects[i];
             }
 
-        }
-
-
-
-       /*for (int i = 0; i < pooledObjects.Count; i++)
-        {
-            if(!pooledObjects[i].activeInHierarchy)
-            {
-                return pooledObjects[i];
-            }
         }*/
+
+
+
+       for (int i = 0; i < pooledObjects.Count; i++)
+        {
+            if(!pooledObjects[i].activeInHierarchy)
+            {
+                return pooledObjects[i];
+            }
+        }
 
 
         return null; 
