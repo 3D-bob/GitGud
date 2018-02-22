@@ -18,7 +18,7 @@ public class LvlSpwng2 : MonoBehaviour {
     int levelCell;
 
     public int AmountOfDupes = 3;
-    int updateX = 0;
+    float updateX = 0f;
 
    
 
@@ -36,6 +36,7 @@ public class LvlSpwng2 : MonoBehaviour {
         }
 
         generateLevel();
+        updateX = 0f;
     }
 
     public void UpdateY(float Y)
@@ -46,7 +47,7 @@ public class LvlSpwng2 : MonoBehaviour {
     void generateLevel()
     {
         //Testing generation
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < pooledCells.Count; i++)
         {
             GameObject nextCell = GetNextCell();
 
@@ -55,6 +56,7 @@ public class LvlSpwng2 : MonoBehaviour {
                 nextCell.transform.position = new Vector3(locationX, locationY, 0);
                 nextCell.transform.rotation = Quaternion.identity;
                 nextCell.SetActive(true);
+                locationX += 30;
             }
         }
     }
