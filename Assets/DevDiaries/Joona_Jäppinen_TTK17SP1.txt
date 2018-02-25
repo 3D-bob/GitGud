@@ -24,3 +24,9 @@ n. 2h level generoinnin viimeistelyä + n. 1 tunti githubin kanssa kädenvääntöä
 
 13.1 
 level palasten sekä partikkeli efektien suunnittelua vähän yli 3h
+
+14.1
+....
+
+25.1
+Viimeistelin levelin constructoinnin/deconstructoinnin 2h+
