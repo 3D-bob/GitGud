@@ -21,7 +21,6 @@ public class LevelCell : MonoBehaviour {
         spawner = GameObject.FindGameObjectWithTag("spawner");
         spawner.GetComponent<LvlSpwng2>().UpdateY(newY);
 
-
         Cell = transform;
 
         for (int i = 0; i < Cell.childCount; i++)
@@ -38,6 +37,10 @@ public class LevelCell : MonoBehaviour {
             }
         }
 
-        Variants[Random.Range(0, Variants.Count)].SetActive(true);
+        if(Variants.Count > 0)
+        {
+            Variants[Random.Range(0, Variants.Count)].SetActive(true);
+        }
+       
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LvlSpwng2 : MonoBehaviour {
 
     [HideInInspector]
-    public List<GameObject> pooledCells;
+    public List<GameObject> pooledCells = new List<GameObject>();
 
     //[SerializeField]
     public GameObject[] CellsToPool;
@@ -26,7 +26,7 @@ public class LvlSpwng2 : MonoBehaviour {
 
     void Start()
     {       
-        for (int i = 0; i < CellsToPool.Length; i++)
+        for (int i = 0; i < CellsToPool.Length - 1; i++)
         {
             for (int c = 0; c < AmountOfDupes; c++)
             {

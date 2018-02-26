@@ -11,6 +11,8 @@ public class Controller2D : RaycastController {
 
     GameObject other;
 
+    
+
     public CollisionInfo collisions;
     [HideInInspector]
     public Vector2 playerInput;
@@ -167,6 +169,7 @@ public class Controller2D : RaycastController {
                 if (hit.collider.tag == "DeathAwaits")
                 {
                     this.gameObject.SetActive(false);
+                    
                 }
 
 
@@ -333,5 +336,4 @@ public class Controller2D : RaycastController {
             slopeAngle = 0;
         }
     }
-
 }
