@@ -9,6 +9,7 @@ TagManager:
   - Corruptable
   - DeathAwaits
   - WallODeath
+  - Variant
   layers:
   - Default
   - TransparentFX
