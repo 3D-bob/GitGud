@@ -22,9 +22,17 @@ public class BlockStateSwitcher : MonoBehaviour {
             }
         }
 
+        ResetState();
+    }
+
+    void ResetState()
+    {
         for (int i = 0; i < blocks.Count; i++)
         {
-            PrefabUtility.ResetToPrefabState(blocks[i]);
+            if(blocks[i].GetComponent<SpriteRenderer>().color == Color.blue)
+            {
+                blocks[i].GetComponent<SpriteRenderer>().color = new Color32(5, 154, 0, 255);
+            }
         }
     }
 }

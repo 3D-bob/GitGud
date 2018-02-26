@@ -9,20 +9,20 @@ public class LvlSpwng2 : MonoBehaviour {
     //[SerializeField]
     public GameObject[] CellsToPool;
 
-    float locationY = 0;
+    //[SerializeField]
+    float locationY = 0f;
 
     //[SerializeField]
     float locationX = 0f;
 
-    Random random = new Random();
     int levelCell;
 
-    int AmountOfDupes = 1;
+    [SerializeField]
+    int AmountOfDupes = 2;
+
     float updateX = 0f;
+ 
 
-   
-
-    // Use this for initialization
     void Start()
     {       
         for (int i = 0; i < CellsToPool.Length; i++)
@@ -35,6 +35,7 @@ public class LvlSpwng2 : MonoBehaviour {
             }
         }
 
+        UpdateY(0);
         generateLevel();
         updateX = 0f;
     }

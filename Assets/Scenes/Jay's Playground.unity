@@ -910,8 +910,10 @@ MonoBehaviour:
   pooledCells: []
   CellsToPool:
   - {fileID: 1466716238497426, guid: 9fc0ab55f93011e4c943620c44d6e66f, type: 2}
-  - {fileID: 1258860952232794, guid: 76b49b67ddd114e4bb58fc11aab78c24, type: 2}
-  - {fileID: 1314804746031184, guid: c9bffbc50d1d1514f8ece4555e5fa832, type: 2}
+  - {fileID: 1466480741191586, guid: 04040e3ea4c11314e91f72f1566687ed, type: 2}
+  - {fileID: 1466480741191586, guid: 04040e3ea4c11314e91f72f1566687ed, type: 2}
+  - {fileID: 1466480741191586, guid: 04040e3ea4c11314e91f72f1566687ed, type: 2}
+  AmountOfDupes: 1
 --- !u!1 &1483006749
 GameObject:
   m_ObjectHideFlags: 0
