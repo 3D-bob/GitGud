@@ -119,7 +119,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1950274140017946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.34, y: 2.4, z: 0}
+  m_LocalPosition: {x: -4.151944, y: 4.597832, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4884317493724682}
@@ -355,7 +355,7 @@ MonoBehaviour:
   timeToJumpApex: 0.4
   highJumpMultiplier: 0.7
   sprintSpeed: 20
-  moveSpeed: 10
+  moveSpeed: 15
   wallSlideSpeedMax: 6
   wallStickTime: 0.25
   wallJumpClimb: {x: 7, y: 25}
@@ -440,7 +440,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 123807449
+  randomSeed: -824952041
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3566,7 +3566,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -656793253
+  randomSeed: -1587479207
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6692,7 +6692,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1111298994
+  randomSeed: -1680524300
   InitialModule:
     serializedVersion: 3
     enabled: 1

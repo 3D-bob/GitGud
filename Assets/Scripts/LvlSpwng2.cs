@@ -17,7 +17,7 @@ public class LvlSpwng2 : MonoBehaviour {
     Random random = new Random();
     int levelCell;
 
-    int AmountOfDupes = 4;
+    int AmountOfDupes = 1;
     float updateX = 0f;
 
    
