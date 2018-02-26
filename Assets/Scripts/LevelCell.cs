@@ -7,17 +7,10 @@ public class LevelCell : MonoBehaviour {
     GameObject spawner;
     float newY;
 
+    Transform Cell;
     Transform location;
 
-    /*private void Awake()
-    {
-        location = this.gameObject.transform.GetChild(0);
-
-        newY = location.transform.position.y;
-
-        spawner = GameObject.FindGameObjectWithTag("spawner");
-        spawner.GetComponent<LevelSpawning>().UpdateY(newY);
-    }*/
+    List<GameObject> Variants = new List<GameObject>();
 
     void OnEnable()
     {
@@ -27,6 +20,24 @@ public class LevelCell : MonoBehaviour {
 
         spawner = GameObject.FindGameObjectWithTag("spawner");
         spawner.GetComponent<LvlSpwng2>().UpdateY(newY);
-        ////////////////////^muista vaihtaa^//////////////////
+
+
+        Cell = transform;
+
+        for (int i = 0; i < Cell.childCount; i++)
+        {
+            Transform obj = Cell.GetChild(i);
+            if(obj.tag == "Variant")
+            {
+                if(obj.gameObject.activeInHierarchy)
+                {
+                    obj.gameObject.SetActive(false);
+                }
+              
+                Variants.Add(obj.gameObject);
+            }
+        }
+
+        Variants[Random.Range(0, Variants.Count)].SetActive(true);
     }
 }

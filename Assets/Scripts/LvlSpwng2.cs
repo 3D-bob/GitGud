@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LvlSpwng2 : MonoBehaviour {
 
+    [HideInInspector]
     public List<GameObject> pooledCells;
 
     //[SerializeField]
@@ -43,6 +44,7 @@ public class LvlSpwng2 : MonoBehaviour {
     public void UpdateY(float Y)
     {
         locationY = Y;
+        Debug.Log("Y is:"+Y);
     }
 
     public void generateLevel()

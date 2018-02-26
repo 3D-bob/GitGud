@@ -34,7 +34,7 @@ public class CellSpawnTrigger : MonoBehaviour {
         if (trigger && !hasBeenTriggered)
         {
             Spawner.GetComponent<LvlSpwng2>().generateLevel();
-            Debug.Log("Triggered");
+            //Debug.Log("Triggered");
             hasBeenTriggered = true;
         }      
     }
