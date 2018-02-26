@@ -16,9 +16,9 @@ public class Player : MonoBehaviour {
     float accelerationTimeGrounded = .1f;
 
     [SerializeField]
-    float sprintSpeed = 18;
+    float sprintSpeed = 20;
     [SerializeField]
-    float moveSpeed = 6;
+    float moveSpeed = 15;
 
     public float wallSlideSpeedMax = 6;
     public float wallSlideSpeedFaster = 10;
@@ -193,7 +193,7 @@ public class Player : MonoBehaviour {
 
     public void OnSprintUp()
     {
-        moveSpeed = 6;
+        moveSpeed = 15;
     }
 
     //Seinäkiipeily

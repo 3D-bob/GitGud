@@ -1033,7 +1033,7 @@ Prefab:
     - target: {fileID: 114688741994298612, guid: c5424a04c6535f74298b27a76dfce268,
         type: 2}
       propertyPath: wallJumpClimb.y
-      value: 22
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5424a04c6535f74298b27a76dfce268, type: 2}
@@ -1348,7 +1348,9 @@ MonoBehaviour:
   - {fileID: 1258860952232794, guid: 76b49b67ddd114e4bb58fc11aab78c24, type: 2}
   - {fileID: 1314804746031184, guid: c9bffbc50d1d1514f8ece4555e5fa832, type: 2}
   - {fileID: 1188335994948150, guid: d5f071bf026134246b8633d1277921c9, type: 2}
-  AmountOfDupes: 1
+  - {fileID: 1797367411044634, guid: 7393548c76422e849a6e0bfe7a949232, type: 2}
+  - {fileID: 1377988062756530, guid: e503ab95b18f56f4eb8855c2cacf9a26, type: 2}
+  AmountOfDupes: 2
 --- !u!1 &1483006749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,11 +1381,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.001
-  speedMod: 0.01
+  speedMod: 0.03
   playerCollision:
     serializedVersion: 2
     m_Bits: 256
-  maxSpeed: 15
+  maxSpeed: 8.5
   horizontalRayCount: 0
   verticalRayCount: 0
   horizontalRaySpacing: 0

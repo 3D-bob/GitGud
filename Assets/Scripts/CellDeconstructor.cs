@@ -37,7 +37,7 @@ public class CellDeconstructor : MonoBehaviour {
 
     IEnumerator CellDeconstruct()
     {  
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(10);
         transform.root.gameObject.GetComponent<CellSpawnTrigger>().TriggerSwitch();
         transform.root.gameObject.SetActive(false);
         hasBeenTriggered = false;
