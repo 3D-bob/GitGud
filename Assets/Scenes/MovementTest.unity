@@ -9900,6 +9900,11 @@ Prefab:
       propertyPath: wallJumpClimb.y
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 114688741994298612, guid: c5424a04c6535f74298b27a76dfce268,
+        type: 2}
+      propertyPath: wallSlideSpeedFaster
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5424a04c6535f74298b27a76dfce268, type: 2}
   m_IsPrefabParent: 0

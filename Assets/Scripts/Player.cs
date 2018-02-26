@@ -19,6 +19,7 @@ public class Player : MonoBehaviour {
     float moveSpeed = 6;
 
     public float wallSlideSpeedMax = 6;
+    public float wallSlideSpeedFaster = 10;
     public float wallStickTime = .25f;
     float timeToWallUnStick;
 
@@ -62,7 +63,6 @@ public class Player : MonoBehaviour {
         //varsinainen liikkumismetodi löytyy controller2D-skriptistä
         controller.Move(velocity * Time.deltaTime, directionalInput);
 
-        //Jos pelaajan ylä- tai alapuolella on este, nopeus y-suunnassa on 0
         if (controller.collisions.above || controller.collisions.below)
         {
             if(controller.collisions.slidingDownMaxSlope)
@@ -204,6 +204,17 @@ public class Player : MonoBehaviour {
         if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 2)
         {
             wallSliding = true;
+
+            //Jos on seinässä kiinni ja painaa alaspäin, pelaaja liikkuu nopeammin alas
+            if (directionalInput.y < 0)
+            {
+                wallSlideSpeedMax = wallSlideSpeedFaster;
+            }
+            else
+            {
+                wallSlideSpeedMax = 6;
+            }
+
             if (velocity.y < -wallSlideSpeedMax)
             {
                 velocity.y = -wallSlideSpeedMax;
