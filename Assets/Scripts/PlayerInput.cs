@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent (typeof(Player))]
+
+//Made by Tuomas Ahonen
+
 public class PlayerInput : MonoBehaviour {
 
     Player player;

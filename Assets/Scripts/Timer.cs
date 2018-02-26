@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-//Made by Tuomas
+//Made by Tuomas Ahonen
 
 public class Timer : MonoBehaviour {
 
