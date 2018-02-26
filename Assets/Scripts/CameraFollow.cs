@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Tekijä Tuomas (tutoriaalin mukaan)
+//Tekijä Tuomas Ahonen (tutoriaalin mukaan)
 
 public class CameraFollow : MonoBehaviour {
 

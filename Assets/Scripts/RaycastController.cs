@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class RaycastController : MonoBehaviour {
 
-    //Tehty tutoriaalin mukaan
+    //Tehty tutoriaalin mukaan by Tuomas Ahonen
     public LayerMask collisionMask;
 
     public const float skinWidth = 0.015f;

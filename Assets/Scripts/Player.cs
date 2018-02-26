@@ -4,6 +4,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(Controller2D))]
 
+// Made by Tuomas Ahonen (osittain tutoriaalin mukaan)
+
 public class Player : MonoBehaviour {
 
     public float maxJumpHeight = 4;

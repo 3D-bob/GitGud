@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Made by Tuomas Ahonen (controllerin pohja on tehty tutoriaalin mukaisesti, mutta siihen on lisätty ominaisuuksia ja tehty paljon muutoksia)
+
 public class Controller2D : RaycastController {
 
     public float maxSlopeAngle = 80;
