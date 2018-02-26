@@ -27,7 +27,7 @@ public class CellDeconstructor : MonoBehaviour {
         Debug.DrawRay(new Vector2(collider.bounds.min.x, collider.bounds.min.y), transform.TransformDirection(Vector2.up * rayLength), Color.yellow);
         RaycastHit2D trigger = Physics2D.Raycast(new Vector2(collider.bounds.min.x, collider.bounds.min.y), transform.TransformDirection(Vector2.up), rayLength, WalloDCollision);
 
-        if (trigger)
+        if (trigger && !hasBeenTriggered)
         {
             Debug.Log("Initiating deconstruction sequence...");
             hasBeenTriggered = true;
@@ -36,9 +36,10 @@ public class CellDeconstructor : MonoBehaviour {
     }
 
     IEnumerator CellDeconstruct()
-    {
+    {  
         yield return new WaitForSeconds(1);
         transform.root.gameObject.GetComponent<CellSpawnTrigger>().TriggerSwitch();
         transform.root.gameObject.SetActive(false);
+        hasBeenTriggered = false;
     }
 }
