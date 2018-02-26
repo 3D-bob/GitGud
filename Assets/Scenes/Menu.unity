@@ -323,7 +323,55 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114067519129768668, guid: 6c4f66486ff40cd4eaf4058d24b4409d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114067519129768668, guid: 6c4f66486ff40cd4eaf4058d24b4409d,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114067519129768668, guid: 6c4f66486ff40cd4eaf4058d24b4409d,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114651056974065218, guid: 6c4f66486ff40cd4eaf4058d24b4409d,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114651056974065218, guid: 6c4f66486ff40cd4eaf4058d24b4409d,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114445320396476094, guid: 6c4f66486ff40cd4eaf4058d24b4409d,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114445320396476094, guid: 6c4f66486ff40cd4eaf4058d24b4409d,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114445320396476094, guid: 6c4f66486ff40cd4eaf4058d24b4409d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114651056974065218, guid: 6c4f66486ff40cd4eaf4058d24b4409d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114067519129768668, guid: 6c4f66486ff40cd4eaf4058d24b4409d, type: 2}
+    - {fileID: 114445320396476094, guid: 6c4f66486ff40cd4eaf4058d24b4409d, type: 2}
+    - {fileID: 114651056974065218, guid: 6c4f66486ff40cd4eaf4058d24b4409d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6c4f66486ff40cd4eaf4058d24b4409d, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &862088049 stripped
@@ -331,6 +379,44 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224933965694064278, guid: 6c4f66486ff40cd4eaf4058d24b4409d,
     type: 2}
   m_PrefabInternal: {fileID: 840727649}
+--- !u!1 &1027482571 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1810760926122496, guid: 6c4f66486ff40cd4eaf4058d24b4409d,
+    type: 2}
+  m_PrefabInternal: {fileID: 840727649}
+--- !u!114 &1027482573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1027482571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7998001, g: 0.78395325, b: 0.9191176, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: af26fc82a031c9a489f32e31b7e7b212, type: 3}
+    m_FontSize: 49
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 49
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Options
 --- !u!224 &1080129184 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224812987679207440, guid: 6c4f66486ff40cd4eaf4058d24b4409d,
@@ -6759,6 +6845,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+--- !u!1 &1888432689 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1053242618453272, guid: 6c4f66486ff40cd4eaf4058d24b4409d,
+    type: 2}
+  m_PrefabInternal: {fileID: 840727649}
+--- !u!114 &1888432691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1888432689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.82351, g: 0.7847102, b: 0.9044118, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: af26fc82a031c9a489f32e31b7e7b212, type: 3}
+    m_FontSize: 49
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 49
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Quit
 --- !u!1 &1934738037
 GameObject:
   m_ObjectHideFlags: 0
@@ -6916,3 +7040,43 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1969346007}
+--- !u!1 &2022046878 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1874793452321718, guid: 6c4f66486ff40cd4eaf4058d24b4409d,
+    type: 2}
+  m_PrefabInternal: {fileID: 840727649}
+--- !u!114 &2022046880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2022046878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7463235, g: 0.7472109, b: 0.875, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: af26fc82a031c9a489f32e31b7e7b212, type: 3}
+    m_FontSize: 49
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 200
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 0
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Play
+
+'
