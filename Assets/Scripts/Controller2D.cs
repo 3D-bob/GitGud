@@ -217,7 +217,6 @@ public class Controller2D : RaycastController {
         }
        
         //Spriten värin vaihtaminen
-
         if(other.GetComponent<SpriteRenderer>().color != Color.blue)
         {
             sc.UpdateScore();
