@@ -1,2 +1,26 @@
 16.1
-2 tuntia suunnittelua
+2H tuntia suunnittelua
+
+23.1
+n. 2H tuntia Main Menu Suunnitteluun ja luontiin
+
+24.1
+2H tuntia Main Menu luontiin ja koodaukseen
+
+30.1
+N. 1H Main Menu viimesitelyyn koodissa ja n. 1H Githubin vaannetelyysa
+
+6.2
+2.5H Graafinen ilmeen suunnittelu
+
+7.2 
+3H Main Menu ja Pelin ilme suunnitelu
+
+13.2
+2.5H UI elemetin suunnitelua ja testausta
+
+14.2
+2H UI ja Main Menu revamppi
+
+26.2
+2H Main menu design vakertamista ja viimeistelya
