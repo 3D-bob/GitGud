@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Tehty tutoriaalin mukaan by Tuomas Ahonen
+
 [RequireComponent(typeof(BoxCollider2D))]
 public class RaycastController : MonoBehaviour {
-
-    //Tehty tutoriaalin mukaan by Tuomas Ahonen
+     
+    //Layeri, jolla collisiota tutkitaan
     public LayerMask collisionMask;
 
     public const float skinWidth = 0.015f;
@@ -37,6 +39,7 @@ public class RaycastController : MonoBehaviour {
 
     public void UpdateRaycastOrigins()
     {
+        //Raycastien alkamiskohtien määrittely, käyttää apuna Box Collider 2d -komponenttia
         Bounds bounds = collider.bounds;
         bounds.Expand(skinWidth * -2);
 
@@ -54,6 +57,7 @@ public class RaycastController : MonoBehaviour {
         float boundsWidth = bounds.size.x;
         float boundsHeight = bounds.size.y;
 
+        //Kuinka monta raycastiä mihinkin suuntiin cästätään
         horizontalRayCount = Mathf.RoundToInt(boundsHeight / dstBetweenRays);
         verticalRayCount = Mathf.RoundToInt(boundsWidth / dstBetweenRays);
 

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 
 //Made by Tuomas Ahonen
+//Tätä ei lopulta edes käytetty
 
 public class Timer : MonoBehaviour {
 

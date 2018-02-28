@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    //Hyppyyn liittyvät muuttujat
     public float maxJumpHeight = 4;
     public float minJumpHeight = 1;
     public float timeToJumpApex = .4f;
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour {
     [SerializeField]
     float moveSpeed = 15;
 
+    //Seinäkiipelyyn liittyvät muuttujat
     public float wallSlideSpeedMax = 6;
     public float wallSlideSpeedFaster = 10;
     public float wallStickTime = .25f;
@@ -49,7 +51,7 @@ public class Player : MonoBehaviour {
         controller = GetComponent<Controller2D>();
         ps = GetComponent<ParticleSystem>();
 
-        //Hyppäämisen käytetty kaava 
+        //Hyppäämisen käytetty kaava (käytetty kiihtyvyyden kaava)
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
