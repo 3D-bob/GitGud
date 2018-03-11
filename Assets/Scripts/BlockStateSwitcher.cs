@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BlockStateSwitcher : MonoBehaviour {
 
+    //Tehnyt Joona Jäppinen
+    //Vaihtaa Kenttätason palikkojen värin takaisin vihreäksi.
+
     List<GameObject> blocks = new List<GameObject>();
 
     Transform Cell;

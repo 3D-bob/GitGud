@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class CellDeconstructor : MonoBehaviour {
 
+    //Tehnyt Joona Jäppinen
+    //Palauttaa pelikentän palasen takaisin obejectpoolin kun sitä ei enää tarvita.
+
     [SerializeField]
-    LayerMask WalloDCollision;
+    LayerMask WalloDCollision; //Layermaski jonka avulla huomioidaan vain pelaajaa jahtaavan peliobjectin collisio
 
     GameObject WalloD;
 
@@ -35,6 +38,7 @@ public class CellDeconstructor : MonoBehaviour {
         }
     }
 
+    //Kun Pelaajaa jahtaava peliobjecti osuu raycastiin se käynnistää ajastimen jonka loputtua pelikentänpalanen palautetaan takaisin objectpoolin
     IEnumerator CellDeconstruct()
     {  
         yield return new WaitForSeconds(10);

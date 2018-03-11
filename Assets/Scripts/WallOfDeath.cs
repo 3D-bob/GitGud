@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WallOfDeath : MonoBehaviour {
 
+    //Tehnyt Joona Jäppinen
+    //Ohjaa pelaajaa jahtaavan peliobjektin toimintaa
+
     [SerializeField]
     float speed = 100f;
     [SerializeField]

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class CellSpawnTrigger : MonoBehaviour {
 
+    //Tehnyt Joona Jäppinen
+    //Generoi uuden kenttäpalasen kun pelaaja osuu raycastiin
+
     [SerializeField]
-    LayerMask playerCollision;
+    LayerMask playerCollision; //Layermaski jonka avulla huomioidaan vain collisiot pelaaja hahmon kanssa.
 
     GameObject Spawner;
     GameObject player;
@@ -33,15 +36,10 @@ public class CellSpawnTrigger : MonoBehaviour {
 
         if (trigger && !hasBeenTriggered)
         {
-            Spawner.GetComponent<LvlSpwng2>().generateLevel();
+            Spawner.GetComponent<LvlSpwng2>().generateLevel(); //kutsuu level spawneria ja käskee sitä hakemaan objectpoolista ei käytössä olevan tasopalasen ja asettamaan sen pelikenttään.
             //Debug.Log("Triggered");
-            hasBeenTriggered = true;
+            hasBeenTriggered = true; //booli jonka avulla tarkistetään onko pelaaja vielä aktivoinut pelikentän generointia.
         }      
-    }
-
-    private void OnDisable()
-    {
-        //vaihtaa lasten väriä :)
     }
 
     public void TriggerSwitch()

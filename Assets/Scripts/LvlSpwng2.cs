@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class LvlSpwng2 : MonoBehaviour {
 
+    //Tehnyt Joona Jäppinen
+    //Scripti luo Startin yhteydessä Objectpoolin CellsToPool arrayn sisältämistä Kenttäpaloista, jotka määritetään editorin puolella.
+    //Scripti generoi pelikenttää satunnaisesti kun sitä kutsutaan Objectpoolissa ei aktiivisena olevista Kenttäpaloista.
+
     [HideInInspector]
-    public List<GameObject> pooledCells = new List<GameObject>();
+    public List<GameObject> pooledCells = new List<GameObject>(); //Listi joka toimii kenttäpalat sisältävänä objectpoolina
 
     //[SerializeField]
-    public GameObject[] CellsToPool;
+    public GameObject[] CellsToPool; //Array johon editorin puolella määritetään käytettävät kenttäpalat
 
-    //[SerializeField]
+    //Koordinaatit joiden mukaan määritetään seuraavan kenttäpalan lokaatio
     float locationY = 0f;
-
-    //[SerializeField]
     float locationX = 0f;
 
-    int levelCell;
 
     [SerializeField]
-    int AmountOfDupes = 2;
+    int AmountOfDupes = 2; //määrittää kuinka monta kopiota kustakin CellsToPool arrayssa olevista kenttäpaloista luodaan Objectpoolin.
 
     float updateX = 0f;
  
@@ -28,8 +29,9 @@ public class LvlSpwng2 : MonoBehaviour {
     {       
         for (int i = 0; i < CellsToPool.Length - 1; i++)
         {
-            for (int c = 0; c < AmountOfDupes; c++)
+            for (int c = 0; c < AmountOfDupes; c++) //Määritetään kopioiden määrä
             {
+                //Instantioidaan Kenttäpalaset järjestyksessä, deactivoidaan ne ja lisätään objectpooliin
                 GameObject cell = (GameObject)Instantiate(CellsToPool[i]);
                 cell.SetActive(false);
                 pooledCells.Add(cell);
@@ -41,7 +43,7 @@ public class LvlSpwng2 : MonoBehaviour {
         updateX = 0f;
     }
 
-    public void UpdateY(float Y)
+    public void UpdateY(float Y) //päivittää kutsuttaessa y koordinaatin jonka mukaan Kenttäpalanen sijoitetaan generoinnin yhteydessä
     {
         locationY = Y;
         Debug.Log("Y is:"+Y);
@@ -50,9 +52,9 @@ public class LvlSpwng2 : MonoBehaviour {
     public void generateLevel()
     {
        
-        GameObject nextCell = GetNextCell();
+        GameObject nextCell = GetNextCell(); //Hakee objectpoolista ei käytössä olevan kenttäpalasen
 
-        if (nextCell != null)
+        if (nextCell != null) //Käyttää haettua kenttäpalasta ja asettaa sen paikalleen.
         {
             nextCell.transform.position = new Vector3(locationX, locationY, 0);
             nextCell.transform.rotation = Quaternion.identity;
